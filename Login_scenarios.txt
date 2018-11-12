@@ -1,0 +1,21 @@
+*** Settings ***
+Test Teardown     Close Browser
+Library           SeleniumLibrary
+Resource          ../../../Users/agupta/PycharmProjects/Robot/Resources.txt    # Resources
+
+*** Test Cases ***
+001 - Successful Login
+    [Tags]    Symbio1
+    Open login page
+    Enter Username    demo
+    Enter Password    demo
+    Click login button
+    Login should be successful
+
+002 - Invalid password
+    [Tags]    Symbio1
+    Open login page
+    Enter Username    demo
+    Enter Password    demoo
+    Click login button
+    Login should fail
